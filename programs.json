@@ -1,0 +1,32 @@
+[
+    {
+        "display_name": "Spotify",
+        "aliases": [
+            "Spotify"
+        ],
+        "executable_url": "https://download.scdn.co/SpotifySetup.exe"
+    },
+    {
+        "display_name": "TIDAL",
+        "aliases": [
+            "TIDAL"
+        ],
+        "executable_url": "https://download.tidal.com/desktop/TIDALSetup.exe"
+    },
+    {
+        "display_name": "Discord",
+        "aliases": [
+            "Discord"
+        ],
+        "executable_url": "https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x86"
+    },
+    {
+        "display_name": "Visual Studio Code",
+        "aliases": [
+            "Visual Studio Code",
+            "VS Code",
+            "VSC"
+        ],
+        "executable_url": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user"
+    }
+]
