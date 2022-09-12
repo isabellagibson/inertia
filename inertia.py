@@ -22,7 +22,7 @@ MANUALLY_INSTALLED_APPS = [
 ]
 
 PROGRAMS = {}
-# {{ PROGRAMS_LIST }}
+PROGRAMS = json.loads('[{"display_name": "Spotify", "aliases": ["Spotify"], "executable_url": "https://download.scdn.co/SpotifySetup.exe", "type": "autorun"}, {"display_name": "TIDAL", "aliases": ["TIDAL"], "executable_url": "https://download.tidal.com/desktop/TIDALSetup.exe", "type": "autorun"}, {"display_name": "Discord", "aliases": ["Discord"], "executable_url": "https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x86", "type": "autorun"}, {"display_name": "Visual Studio Code", "aliases": ["Visual Studio Code", "VS Code", "VSC"], "executable_url": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user", "type": "manual"}, {"display_name": "Insomnia", "aliases": ["Insomnia"], "executable_url": "https://updates.insomnia.rest/downloads/windows/latest?app=com.insomnia.app&source=website", "type": "autorun"}]')
 
 # Get system information
 os.system('cls')
@@ -45,11 +45,11 @@ for line in sysinfo:
     print(ln)
     time.sleep(0.2)
 
-print('\n\nThe following applications will be installed:\n')
+print('\n\nThe following applications will be installed:')
 for p in PROGRAMS:
     print(' -', p['display_name'])
 try:
-    input('\nHit Enter to continue or CTRL+C to exit.')
+    input('\nHit Enter to continue or CTRL+C to exit')
 except:
     os.system('cls')
     exit()
