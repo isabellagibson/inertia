@@ -1,3 +1,4 @@
+import base64
 import requests
 import json
 import os
@@ -15,12 +16,22 @@ else:
     else:
         PROGRAMS = json.loads(req.text)
 
-print('Injecting programs into main.py...')
+os.system('cls')
+print('Injecting variables into main.py...')
 tmp = open('inertia.py', 'w')
 for line in open('main.py', 'r').readlines():
     ln = line.replace('\r', '').replace('\n', '')
-    if ln != '# {{ PROGRAMS_LIST }}':
+    if ln != '# {{ PROGRAMS }}':
         tmp.write(line)
         continue
     tmp.write(f'PROGRAMS = json.loads(\'{json.dumps(PROGRAMS)}\')\n')
 tmp.close()
+os.system('cls')
+print('Building inertia.py...')
+os.system('pyinstaller --onefile inertia.py')
+os.system('move dist\\inertia.exe inertia.exe')
+for dr in ['build', 'dist']:
+    os.system(f'rmdir {dr}')
+os.remove('inertia.py')
+os.remove('inertia.spec')
+os.system('cls')
