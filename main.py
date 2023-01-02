@@ -5,6 +5,17 @@ import time
 import random
 import requests
 import json
+import sys
+import win32com.shell.shell as shell
+
+# Request elevation
+ASADMIN = 'asadmin'
+if sys.argv[-1] != ASADMIN:
+    script = os.path.abspath(sys.argv[0])
+    params = ' '.join([script] + sys.argv[1:] + [ASADMIN])
+    shell.ShellExecuteEx(lpVerb='runas', lpFile=sys.executable, lpParameters=params)
+    sys.exit(0)
+
 
 AUTORUN_APPS = [
     'https://www.google.com/chrome/thank-you.html?statcb=0&installdataindex=empty&defaultbrowser=0#'
